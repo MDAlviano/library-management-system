@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="EsemkaLibraryDataClasses">
+  <DataContextMoniker Name="/EsemkaLibraryDataClassesDataContext" />
+  <nestedChildShapes>
+    <classShape Id="4144bb63-acf1-43ba-a0d7-5586964b4693" absoluteBounds="3.625, 2.875, 2, 2.1554996744791666">
+      <DataClassMoniker Name="/EsemkaLibraryDataClassesDataContext/Book" />
+      <nestedChildShapes>
+        <elementListCompartment Id="7ebe9323-0cf1-458a-9f48-87c7fd5b7aa9" absoluteBounds="3.6400000000000006, 3.335, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="7da30991-182a-45e3-8cb9-eb6727372184" absoluteBounds="6.625, 3.5, 2, 1.7708968098958331">
+      <DataClassMoniker Name="/EsemkaLibraryDataClassesDataContext/BookGenre" />
+      <nestedChildShapes>
+        <elementListCompartment Id="917b8008-108f-48bd-a7ec-5ef084dadfbd" absoluteBounds="6.64, 3.96, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(5.625 : 4.26524983723958); (6.625 : 4.26524983723958)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/EsemkaLibraryDataClassesDataContext/Book/Book_BookGenre" />
+      <nodes>
+        <classShapeMoniker Id="4144bb63-acf1-43ba-a0d7-5586964b4693" />
+        <classShapeMoniker Id="7da30991-182a-45e3-8cb9-eb6727372184" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="bd6b536d-3d04-4a88-886b-d83e2744fb9e" absoluteBounds="0.5, 3.25, 2, 2.3478011067708335">
+      <DataClassMoniker Name="/EsemkaLibraryDataClassesDataContext/Borrowing" />
+      <nestedChildShapes>
+        <elementListCompartment Id="c28b2ff0-eea9-4dc9-b28f-ae922e2b42ff" absoluteBounds="0.51500000000000012, 3.71, 1.9700000000000002, 1.7878011067708335" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(3.625 : 4.14024983723958); (2.5 : 4.14024983723958)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/EsemkaLibraryDataClassesDataContext/Book/Book_Borrowing" />
+      <nodes>
+        <classShapeMoniker Id="4144bb63-acf1-43ba-a0d7-5586964b4693" />
+        <classShapeMoniker Id="bd6b536d-3d04-4a88-886b-d83e2744fb9e" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="2dc332fd-3ffe-46bc-8a11-fec0d1f187bd" absoluteBounds="6.625, 0.75, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/EsemkaLibraryDataClassesDataContext/Genre" />
+      <nestedChildShapes>
+        <elementListCompartment Id="dd19f085-667e-4878-802b-d5f69e5b123f" absoluteBounds="6.64, 1.21, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(7.625 : 2.32859537760417); (7.625 : 3.5)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/EsemkaLibraryDataClassesDataContext/Genre/Genre_BookGenre" />
+      <nodes>
+        <classShapeMoniker Id="2dc332fd-3ffe-46bc-8a11-fec0d1f187bd" />
+        <classShapeMoniker Id="7da30991-182a-45e3-8cb9-eb6727372184" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="0af051a7-a31f-487e-966d-689a27304280" absoluteBounds="0.5, 0.5, 2, 1.7708968098958331">
+      <DataClassMoniker Name="/EsemkaLibraryDataClassesDataContext/Member" />
+      <nestedChildShapes>
+        <elementListCompartment Id="915eb86f-8246-4f6f-8877-bc0c1f46f66f" absoluteBounds="0.51500000000000012, 0.96, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(1.5 : 2.27089680989583); (1.5 : 3.25)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/EsemkaLibraryDataClassesDataContext/Member/Member_Borrowing" />
+      <nodes>
+        <classShapeMoniker Id="0af051a7-a31f-487e-966d-689a27304280" />
+        <classShapeMoniker Id="bd6b536d-3d04-4a88-886b-d83e2744fb9e" />
+      </nodes>
+    </associationConnector>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

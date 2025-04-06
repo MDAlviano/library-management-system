@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="EsemkaLibrary" Class="EsemkaLibraryDataClassesDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=ALVIN\ALVINTORIALSQL;Initial Catalog=EsemkaLibrary;User ID=sa;Encrypt=True;Trust Server Certificate=True" SettingsObjectName="esemka_library.Properties.Settings" SettingsPropertyName="EsemkaLibraryConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.Book" Member="Books">
+    <Type Name="Book">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="title" Type="System.String" DbType="VarChar(200) NOT NULL" CanBeNull="false" />
+      <Column Name="author" Type="System.String" DbType="VarChar(200) NOT NULL" CanBeNull="false" />
+      <Column Name="publish_date" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="stock" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="created_at" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="deleted_at" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Association Name="Book_BookGenre" Member="BookGenres" ThisKey="id" OtherKey="book_id" Type="BookGenre" />
+      <Association Name="Book_Borrowing" Member="Borrowings" ThisKey="id" OtherKey="book_id" Type="Borrowing" />
+    </Type>
+  </Table>
+  <Table Name="dbo.BookGenre" Member="BookGenres">
+    <Type Name="BookGenre">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="book_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="genre_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="created_at" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="deleted_at" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Association Name="Book_BookGenre" Member="Book" ThisKey="book_id" OtherKey="id" Type="Book" IsForeignKey="true" />
+      <Association Name="Genre_BookGenre" Member="Genre" ThisKey="genre_id" OtherKey="id" Type="Genre" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Borrowing" Member="Borrowings">
+    <Type Name="Borrowing">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="member_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="book_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="borrow_date" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="return_date" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="fine" Type="System.Decimal" DbType="Decimal(10,2)" CanBeNull="true" />
+      <Column Name="created_at" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="deleted_at" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Association Name="Book_Borrowing" Member="Book" ThisKey="book_id" OtherKey="id" Type="Book" IsForeignKey="true" />
+      <Association Name="Member_Borrowing" Member="Member" ThisKey="member_id" OtherKey="id" Type="Member" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Genre" Member="Genres">
+    <Type Name="Genre">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="name" Type="System.String" DbType="VarChar(200) NOT NULL" CanBeNull="false" />
+      <Column Name="created_at" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="deleted_at" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Association Name="Genre_BookGenre" Member="BookGenres" ThisKey="id" OtherKey="genre_id" Type="BookGenre" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Member" Member="Members">
+    <Type Name="Member">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="name" Type="System.String" DbType="VarChar(200) NOT NULL" CanBeNull="false" />
+      <Column Name="email" Type="System.String" DbType="VarChar(200) NOT NULL" CanBeNull="false" />
+      <Column Name="created_at" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="deleted_at" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Association Name="Member_Borrowing" Member="Borrowings" ThisKey="id" OtherKey="member_id" Type="Borrowing" />
+    </Type>
+  </Table>
+</Database>

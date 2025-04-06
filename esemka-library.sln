@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.11.35312.102
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "esemka-library", "esemka-library\esemka-library.csproj", "{B02281A7-859A-4D9F-9314-1F77A7BE4E9C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B02281A7-859A-4D9F-9314-1F77A7BE4E9C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B02281A7-859A-4D9F-9314-1F77A7BE4E9C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B02281A7-859A-4D9F-9314-1F77A7BE4E9C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B02281A7-859A-4D9F-9314-1F77A7BE4E9C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {A5533074-0B7B-4E51-B7CA-ED24C1C4A869}
+	EndGlobalSection
+EndGlobal
