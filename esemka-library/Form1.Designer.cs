@@ -35,18 +35,18 @@
             this.tbMemberName = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dgMemberBorrowedBooks = new System.Windows.Forms.DataGridView();
             this.btnToNewBorrowing = new System.Windows.Forms.Button();
             this.labelDateTime = new System.Windows.Forms.Label();
             this.mainTimer = new System.Windows.Forms.Timer(this.components);
-            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.borrowingId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.borrowedBookTitle = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.borrowDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dueDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.overdueDays = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgMemberBorrowedBooks)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -101,7 +101,7 @@
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.dataGridView1);
+            this.groupBox2.Controls.Add(this.dgMemberBorrowedBooks);
             this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox2.Location = new System.Drawing.Point(54, 231);
             this.groupBox2.Name = "groupBox2";
@@ -110,22 +110,23 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Borrowing Data";
             // 
-            // dataGridView1
+            // dgMemberBorrowedBooks
             // 
-            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.id,
+            this.dgMemberBorrowedBooks.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgMemberBorrowedBooks.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgMemberBorrowedBooks.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.borrowingId,
             this.borrowedBookTitle,
             this.borrowDate,
             this.dueDate,
             this.overdueDays});
-            this.dataGridView1.Location = new System.Drawing.Point(18, 35);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 62;
-            this.dataGridView1.RowTemplate.Height = 28;
-            this.dataGridView1.Size = new System.Drawing.Size(932, 127);
-            this.dataGridView1.TabIndex = 0;
+            this.dgMemberBorrowedBooks.Location = new System.Drawing.Point(18, 35);
+            this.dgMemberBorrowedBooks.Name = "dgMemberBorrowedBooks";
+            this.dgMemberBorrowedBooks.RowHeadersWidth = 62;
+            this.dgMemberBorrowedBooks.RowTemplate.Height = 28;
+            this.dgMemberBorrowedBooks.Size = new System.Drawing.Size(932, 127);
+            this.dgMemberBorrowedBooks.TabIndex = 0;
+            this.dgMemberBorrowedBooks.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgMemberBorrowedBooks_CellContentClick);
             // 
             // btnToNewBorrowing
             // 
@@ -136,6 +137,7 @@
             this.btnToNewBorrowing.TabIndex = 3;
             this.btnToNewBorrowing.Text = "New Borrowing";
             this.btnToNewBorrowing.UseVisualStyleBackColor = true;
+            this.btnToNewBorrowing.Click += new System.EventHandler(this.btnToNewBorrowing_Click);
             // 
             // labelDateTime
             // 
@@ -153,13 +155,13 @@
             this.mainTimer.Interval = 1000;
             this.mainTimer.Tick += new System.EventHandler(this.mainTimer_Tick);
             // 
-            // id
+            // borrowingId
             // 
-            this.id.HeaderText = "Id";
-            this.id.MinimumWidth = 8;
-            this.id.Name = "id";
-            this.id.ReadOnly = true;
-            this.id.Visible = false;
+            this.borrowingId.HeaderText = "Id";
+            this.borrowingId.MinimumWidth = 8;
+            this.borrowingId.Name = "borrowingId";
+            this.borrowingId.ReadOnly = true;
+            this.borrowingId.Visible = false;
             // 
             // borrowedBookTitle
             // 
@@ -200,11 +202,12 @@
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label1);
             this.Name = "Form1";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ESEMKA Library";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgMemberBorrowedBooks)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -215,14 +218,14 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox tbMemberName;
+        public System.Windows.Forms.TextBox tbMemberName;
         private System.Windows.Forms.Button btnSearchMember;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgMemberBorrowedBooks;
         private System.Windows.Forms.Button btnToNewBorrowing;
         private System.Windows.Forms.Label labelDateTime;
         private System.Windows.Forms.Timer mainTimer;
-        private System.Windows.Forms.DataGridViewTextBoxColumn id;
+        private System.Windows.Forms.DataGridViewTextBoxColumn borrowingId;
         private System.Windows.Forms.DataGridViewTextBoxColumn borrowedBookTitle;
         private System.Windows.Forms.DataGridViewTextBoxColumn borrowDate;
         private System.Windows.Forms.DataGridViewTextBoxColumn dueDate;
